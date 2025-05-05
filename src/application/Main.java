@@ -23,15 +23,36 @@ public class Main {
         biblioteca.adicionarLivros("The Pragmatic Programmer", "Andrew Hunt e David Thomas", 1999);
         biblioteca.adicionarLivros("Design Patterns em Java", "Steven John Metsker", 2002);
 
-        // Recomendações manuais com pesos
+        // Distância 1 (forte relação direta)
         biblioteca.recomendarLivroComPeso("Clean Code", "Código Limpo", 1);
-        biblioteca.recomendarLivroComPeso("Clean Code", "Arquitetura Limpa", 2);
+        biblioteca.recomendarLivroComPeso("Clean Code", "Arquitetura Limpa", 1);
         biblioteca.recomendarLivroComPeso("Código Limpo", "Refatoração", 1);
-        biblioteca.recomendarLivroComPeso("Java: Como Programar", "Estruturas de Dados e Algoritmos em Java", 2);
-        biblioteca.recomendarLivroComPeso("Estruturas de Dados e Algoritmos em Java", "Entendendo Algoritmos", 1);
-        biblioteca.recomendarLivroComPeso("Refatoração", "Padrões de Projeto", 2);
+        biblioteca.recomendarLivroComPeso("Refatoração", "Padrões de Projeto", 1);
         biblioteca.recomendarLivroComPeso("Padrões de Projeto", "Design Patterns em Java", 1);
-        biblioteca.recomendarLivroComPeso("Arquitetura Limpa", "The Pragmatic Programmer", 3);
+        biblioteca.recomendarLivroComPeso("Estruturas de Dados e Algoritmos em Java", "Entendendo Algoritmos", 1);
+
+        // Distância 2 (ligação temática ou autor comum)
+        biblioteca.recomendarLivroComPeso("Clean Code", "Refatoração", 2);
+        biblioteca.recomendarLivroComPeso("Código Limpo", "Arquitetura Limpa", 2);
+        biblioteca.recomendarLivroComPeso("Arquitetura Limpa", "The Pragmatic Programmer", 2);
+        biblioteca.recomendarLivroComPeso("Java: Como Programar", "Estruturas de Dados e Algoritmos em Java", 2);
+        biblioteca.recomendarLivroComPeso("Refatoração", "Design Patterns em Java", 2);
+
+        // Distância 3 (ligação por área: programação, boas práticas)
+        biblioteca.recomendarLivroComPeso("Clean Code", "Padrões de Projeto", 3);
+        biblioteca.recomendarLivroComPeso("Código Limpo", "Design Patterns em Java", 3);
+        biblioteca.recomendarLivroComPeso("Java: Como Programar", "Padrões de Projeto", 3);
+        biblioteca.recomendarLivroComPeso("Estruturas de Dados e Algoritmos em Java", "Refatoração", 3);
+        biblioteca.recomendarLivroComPeso("Entendendo Algoritmos", "The Pragmatic Programmer", 3);
+        biblioteca.recomendarLivroComPeso("Clean Code", "The Pragmatic Programmer", 3);
+
+        // Distância 4 (ligação ampla, mesma área mas pouco direta)
+        biblioteca.recomendarLivroComPeso("Java: Como Programar", "The Pragmatic Programmer", 4);
+        biblioteca.recomendarLivroComPeso("Código Limpo", "Entendendo Algoritmos", 4);
+        biblioteca.recomendarLivroComPeso("Arquitetura Limpa", "Entendendo Algoritmos", 4);
+        biblioteca.recomendarLivroComPeso("Clean Code", "Java: Como Programar", 4);
+        biblioteca.recomendarLivroComPeso("Design Patterns em Java", "The Pragmatic Programmer", 4);
+
 
         // Conectar todos os livros entre si 
         List<Livro> livros = biblioteca.getLivros();
